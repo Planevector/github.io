@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>常用样式</title>
+		<!--引用外部样式文件-->
+		<!--<link rel="stylesheet" type="text/css" href="css/css01.css"/>-->
+		
+		<!--内部样式-->
+		<style type="text/css">
+			/*标签选择器,在这个例子中,就是本页面上所有的div都会使用下面设置的样式*/
+			div{
+				height: 300px;
+				width: 300px;
+				
+				/*边框样式,颜色*/
+				/*border: 1px solid red;*/  /*border样式的简写*/
+				border-width: 1px;
+				border-style: solid;
+				border-color:tomato;
+				border-radius: 10px; /*设置边框的弧度,当一个正方形的边框的弧度设为高宽的一半时,就变成一个圆*/
+				
+				margin: auto; /*让div居中显示*/
+				
+				/*背景颜色*/
+				background-color: #00FF00;
+				/*颜色的表示方式有三种:
+				1,用颜色名称: red , green ,blue, gray, white, black, yellow;
+				2,rgb(0,0,0) 括号里的顺序是红,绿,蓝. 每一种颜色从0到255.
+				  rgb(0,0,0)黑色；rgb(255,255,255)白色；rgb(255,0,0)红色
+				3，#000000    16进制表示颜色,前两位是红色，中间两位是绿色，末两位是蓝色。 值重00到FF
+				
+				* */
+				
+				
+				/*字体颜色*/
+				color: white;
+				
+				/*字体样式*/
+				font-family: "仿宋";
+				font-size: 16px; /*也可以用em做单位,表示默认字体的倍数,如0.5em, 2em;*/
+				font-style: normal; /*italic-斜体*/
+				font-weight:bolder; /*字体的粗细*/
+			}
+			p{
+				/*word-spacing: 5px;*/ /*英文单词*/
+				letter-spacing: 5px ; /*英文字母或中文文字*/
+				line-height: 30px; /*设置行高度,拉开行距*/
+				text-decoration: underline;/* 文本装饰,underline-下划线;overline-上划线 ;line-through-删除线*/
+			}
+			a{
+				text-decoration: none;
+			}
+			ul{
+				list-style-type: none;
+			}
+			span{
+				background-color: red;
+				color: white;
+			}
+			/*hover鼠标进入标签时的样式*/
+			li:hover{
+				background-color: darkgray;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<!--内联样式，就是写在标签的style属性里：style="height:100px;width:100px;border:1px solid red;"-->
+		<div>
+			 我是div
+		</div>
+		<div>sad</div>
+		<!--<div id="">
+			
+		</div>-->
+		<p>
+			
+			国家航天局此前透露，我国正在规划嫦娥六号、七号、八号任务。其中嫦娥六号任务，将根据计划于今年年底实施的嫦娥五号任务情况，确定在月球正面或背面南极附近实施采样返回。据中法两国今年3月签署的月球探索计划意向书显示，嫦娥六号任务预计在2023年至2024年实施。
+		</p>
+		<a href="#">去除下划线的a标签</a>
+		<ul>
+			<!--&nbsp; 空格-->
+			<li><span>&nbsp;1&nbsp;</span> 华为P30</li>
+			<li><span>&nbsp;2&nbsp;</span> Iphone XS</li>
+			<li><span>&nbsp;3&nbsp;</span>  三星XXX</li>
+		</ul>
+		
+		<!--特殊字符-->
+		<strong>空格&nbsp;空格<strong>
+		<!--大于 &gt; 小于&lt;-->
+		<strong>&gt;  &lt;</strong> <!--greater than; less than-->
+		<!--人民币&yen;-->
+		<strong>&yen;</strong>
+		<!--版权信息图标 &copy;-->
+		<strong>&copy;</strong>
+		<!--注册商标 &reg;-->
+		<strong>&reg;</strong>
+	</body>
+</html>

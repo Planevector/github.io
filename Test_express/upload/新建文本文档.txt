@@ -1,0 +1,59 @@
+https://www.bilibili.com/video/av10786783?from=search&seid=7286515709978132152
+
+https://msdn.microsoft.com/zh-cn/
+
+https://fishc.com.cn/forum.php?mod=forumdisplay&fid=255&filter=typeid&typeid=404
+
+https://fanyi.baidu.com/?aldtype=16047#en/zh/Mr.%20ye%20is%20sha%20bi
+
+
+默认路径是源文件的路径。
+如果指定别的路径，两种方法：
+一是相对当前默认路径指定路径。
+二是指定绝对路径。
+
+譬如：
+E:\C\c.c 这是源文件
+E:\C\abc.exe 
+E:\D\abcd.exe
+C:\A\aaa.exe
+
+如果想执行abc.exe，那么可以不指定路径：
+#include <stdlib.h>
+int main()
+{
+char *cmd="abc.exe";
+system(cmd);
+return 0;
+}
+
+如果想执行abcd.exe，那么可如下指定路径：
+include <stdlib.h>
+int main()
+{
+char *cmd="..\\D\\abcd.exe";
+//指定相对路径
+//char *cmd="E:\\D\\abcd.exe";
+//指定绝对路径
+system(cmd);
+return 0;
+}
+
+如果想执行aaa.exe，则必须指定绝对路径：
+#include <stdlib.h>
+int main()
+{
+char *cmd="C:\\A\\aaa.exe";
+system(cmd);
+return 0;
+}
+
+对于空格问题，可按如下方法解决
+#include <stdlib.h>
+int main()
+{
+char *cmd="E:\\AB\" \"CD\\xyz.exe";
+//即执行E:\AB CD\xyz.exe
+system(cmd);
+return 0;
+}

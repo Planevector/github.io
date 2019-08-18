@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8" />
+            
+            <title>Document</title>
+        </head>
+        <body>
+            <%-include('../part/header.ejs') -%>
+            <h1><%= data.age %></h1>
+            <h1><%= data.job %></h1>
+            <h1><%= data.hobbit %></h1>
+
+            <h2>
+                <ul>
+                    <% data.hobbit.forEach(function(item){ %>
+                        <li>
+                            <%= item %>
+                        </li>
+                  <%   }) %>
+                </ul>
+            </h2>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <h1>图片上传</h1>
+                <input type="file" name="logo" />
+                <input type="submit" value="提交" />
+            </form>
+        </body>
+    </html>
