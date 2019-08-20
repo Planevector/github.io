@@ -1,27 +1,26 @@
 package gin_api
 
 import (
-    . "https/data"
-    Func "https/func_judge"
+    "Sing/data"
+    "Sing/func_judge"
     "net/http"
-
     "github.com/gin-gonic/gin"
 )
 func Register(c *gin.Context){
 	UserName :=c.Request.FormValue("Name")
 	PassWord :=c.Request.FormValue("Passwd")
 
-	Bool :=Func.IsExist(UserName)
+	Bool :=func_judge.IsExist(UserName)
 	if Bool{
-		State["state"]=1
-		State["text"]="user already exists"	
+		data.State["state"]=1
+		data.State["text"]="user already exists"	
 	}else{
 		AddStruct(UserName,PassWord)
-		State["state"]=1
-		State["text"]="login was successful"
+		data.State["state"]=1
+		data.State["text"]="login was successful"
 	}
 	
-	c.String(http.StatusOk,"%v",State)
+	c.String(200,"%v",data.State)
 
 }
 
@@ -29,35 +28,35 @@ func Login(c *gin.Context){
 	UserName :=c.Request.FormValue("Name")
 	PassWord :=c.Request.FormValue("Passwd")
 
-	Bool :=Fucn.IsExist(UserName)
+	Bool :=func_judge.IsExist(UserName)
 	if Bool{
-		Bool_Pwd :=Func.IsRight(UserName,PassWord)
+		Bool_Pwd :=func_judge.IsRight(UserName,PassWord)
 		if Bool_Pwd{
-			State["state"]="1"
-			State["text"]="sing was successful"
+			data.State["state"]="1"
+			data.State["text"]="sing was successful"
 		}else{
-			State["state"]=0
-			State["text"]="Password Error"
+			data.State["state"]=0
+			data.State["text"]="Password Error"
 		}
 	}else{
-		State["state"]=2
-		State["text"]="login fail user not registered"
+		data.State["state"]=2
+		data.State["text"]="login fail user not registered"
 	}
-	c.String(http.StatusOk,"%v",State)
+	c.String(200,"%v",data.State)
 
 }
 
 func NotFound(c *gin.Context){
 	c.JSON(http.StatusNotFound,gin.H{
 		"status":404,
-		"error":"404,page not exissts"
+		"error":"404,page not exissts",
 	})
 }
 
 func AddStruct(Name string,Passwd string){
-	var user User
+	var user data.User
 	user.UserName=Name
 	user.PassWord=Passwd
-	user.Id=len(Slice)+1
-	slicce=append(Slice,user)
+	user.Id=len(data.Slice)+1
+	data.Slice=append(data.Slice,user)
 }

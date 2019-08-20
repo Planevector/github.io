@@ -1,4 +1,4 @@
-module wages_service
+module Sing
 
 go 1.12
 

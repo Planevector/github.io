@@ -1,6 +1,6 @@
 package gin_router
 import (
-    api "https/gin_api"
+    api "Sing/gin_api"
 	"net/http"
     "github.com/gin-gonic/gin"
 )

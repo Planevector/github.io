@@ -1,7 +1,7 @@
 package main
 import (
-    Main "https/gin_router"
+  "Sing/gin_router"
 )
 func main() {
-    Main.InitRouter()
+   InitRouter()
 }
