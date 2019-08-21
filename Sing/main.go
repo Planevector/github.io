@@ -3,5 +3,5 @@ import (
   "Sing/gin_router"
 )
 func main() {
-   InitRouter()
+   gin_router.InitRouter()
 }
