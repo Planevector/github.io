@@ -1,4 +1,4 @@
-package main
+package Sendemail_func
 
 import (
 	"fmt"
@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"os"
 	"regexp"
-	"data"
 	"gopkg.in/gomail.v2"
 )
 
@@ -54,10 +53,7 @@ func Reptile() {
 
 	re := regexp.MustCompile(reId)
 	allstring := re.FindAllString(html, -1)
-	var i int
-	for range allstring {
-		fmt.Println(allstring[i])
-		i++
-	}
-	//fmt.Println(allstring)
+	fmt.Println(allstring)
 }
+
+
