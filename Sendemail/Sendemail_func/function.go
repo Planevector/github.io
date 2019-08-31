@@ -6,17 +6,19 @@ import (
 	"net/http"
 	"os"
 	"regexp"
+
 	"gopkg.in/gomail.v2"
 )
 
 //发送邮件
-func SendEmail(Name string) {
+func SendEmail(Member string) {
+
 	m := gomail.NewMessage()
 	m.SetHeader("From", "planevector@aliyun.com")              //发件人
 	m.SetHeader("To", "planevector@qq.com")                    //收件人
 	m.SetAddressHeader("Cc", "planevector@163.com", "message") //抄送人
 	m.SetHeader("Subject", "家人生日祝福提醒")                         //邮件标题
-	m.SetBody("text/html", Name)                               //邮件内容
+	m.SetBody("text/html", Member)                             //邮件内容
 	d := gomail.NewDialer("smtp.aliyun.com", 465, "planevector@aliyun.com", "Wang1015")
 	//邮件发送 服务器 信息,使用授权码而非密码
 	if err := d.DialAndSend(m); err != nil {
@@ -27,7 +29,7 @@ func SendEmail(Name string) {
 //爬虫
 
 var (
-	reId = "<p class=\"topTimeBlue\">[\\s\\S]+?月[\\s\\S]{1,2}</p>"
+	reId = "[\u4e00-\u9fa5]月[\\s\\S]{1,2}"
 )
 
 func HandleErr(err error, when string) {
@@ -46,14 +48,16 @@ func GetHtml(url string) string {
 	return html
 }
 
-func Reptile() {
+func Reptile() []string {
+
+	var s []string
 	html := GetHtml("https://www.jintianjihao.com")
 
 	//fmt.Println(html)
 
 	re := regexp.MustCompile(reId)
-	allstring := re.FindAllString(html, -1)
-	fmt.Println(allstring)
+	s = re.FindAllString(html, -1)
+	return s
+
+	//fmt.Println(s)
 }
-
-
