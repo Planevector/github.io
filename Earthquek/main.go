@@ -7,7 +7,9 @@ import (
 
 func main(){
 	
-Data.Print()
+for {
+	Data.Print()
+}
 	// var i int
 	// for range slice{
 	// 	fmt.Println(slice[i])
