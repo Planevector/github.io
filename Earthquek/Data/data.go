@@ -6,10 +6,12 @@ import (
 	"erth/SendFunc"
 )
 func Print() {
-	var slice,Slice []string= SendFunc.Reptile()
-	var SLICE []string=SendFunc.Reptile1()
-	fmt.Println("\n")
-	fmt.Println(SLICE[0])
+	var earthquake,localtion []string= SendFunc.Reptile()
+	var Time []string=SendFunc.Reptile1()
+	fmt.Println("last earthquake\n")
+	fmt.Println(Time[0])
+	fmt.Println(localtion[0])
+	fmt.Println(earthquake[0])
 	time.Sleep(time.Duration(500) * time.Second)
 	// fmt.Println(slice)
 	// fmt.Println("\n\n\n")
@@ -22,13 +24,13 @@ func Print() {
 	// 	 default :fmt.Println("warning earthquake")
 	// }
 
-	if SLICE[0]==v[0]{
+	if Time[0]==v[0]{
 		  fmt.Println("\n")
 		  fmt.Println(v[0])
 		fmt.Println("it's not earthquake")
 		
 	}else{
-		SendFunc.Send(Slice,SLICE,slice)
+		SendFunc.Send(Time,localtion,earthquake)
 	}
 
 	
