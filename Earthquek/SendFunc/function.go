@@ -11,7 +11,7 @@ import (
 
 //sendemail
 
-func Send(Member []string,Member2 []string,Member3 []string) {
+func Send(Member []string,Member2 []string,Member3 []string) int {
 
 	m := gomail.NewMessage()
 	m.SetHeader("From", "bandicam2017@aliyun.com")              //发件人
@@ -24,6 +24,7 @@ func Send(Member []string,Member2 []string,Member3 []string) {
 	if err := d.DialAndSend(m); err != nil {
 		panic(err)
 	}
+	return 1
 }
 
 

@@ -12,7 +12,7 @@ func Print() {
 	fmt.Println(Time[0])
 	fmt.Println(localtion[0])
 	fmt.Println(earthquake[0])
-	time.Sleep(time.Duration(500) * time.Second)
+	time.Sleep(time.Duration(50) * time.Second)
 	// fmt.Println(slice)
 	// fmt.Println("\n\n\n")
 	// fmt.Println(Slice)
@@ -30,7 +30,9 @@ func Print() {
 		fmt.Println("it's not earthquake")
 		
 	}else{
-		SendFunc.Send(Time,localtion,earthquake)
+		if 1==SendFunc.Send(Time,localtion,earthquake){
+			fmt.Println("send success")
+		}
 	}
 
 	
