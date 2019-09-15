@@ -1,4 +1,4 @@
-package SendFunc
+package main
 
 import (
 	"fmt"
@@ -6,8 +6,24 @@ import (
 	"net/http"
 	"os"
 	"regexp"
+	"time"
 	"gopkg.in/gomail.v2"
+
 )
+
+func main(){
+	
+for {
+	Print()
+}
+	// var i int
+	// for range slice{
+	// 	fmt.Println(slice[i])
+	// 	i++
+	// }
+	
+}
+
 
 //sendemail
 
@@ -18,7 +34,7 @@ func Send(Member []string,Member2 []string,Member3 []string) int {
 	m.SetHeader("To", "1171840237@qq.com")                    //收件人
 	m.SetAddressHeader("Cc", " ", "message") //抄送人
 	m.SetHeader("Subject", "earthquake warning")                         //邮件标题
-	m.SetBody("text/html", Member[0]+Member2[0]+Member3[0]+"级地震")                             //邮件内容
+	m.SetBody("text/html", "时间"+Member[0]+"地点"+Member2[0]+"地震等级"+Member3[0])                             //邮件内容
 	d := gomail.NewDialer("smtp.aliyun.com", 465, "bandicam2017@aliyun.com", "Wang1015")
 	//邮件发送 服务器 信息,使用授权码而非密码
 	if err := d.DialAndSend(m); err != nil {
@@ -80,4 +96,47 @@ func Reptile() ([]string,[]string){
 	return s,S
 
 	//fmt.Println(s,"\n")
+}
+
+
+
+func Print() {
+	var earthquake,localtion []string= Reptile()
+	var Time []string=Reptile1()
+	fmt.Println("last earthquake\n")
+	fmt.Println(Time[0])
+	fmt.Println(localtion[0])
+	fmt.Println(earthquake[0])
+	time.Sleep(time.Duration(50) * time.Second)
+	// fmt.Println(slice)
+	// fmt.Println("\n\n\n")
+	// fmt.Println(Slice)
+	// fmt.Println("\n\n\n")
+	// fmt.Println(SLICE)
+	 v :=Reptile1()
+	// switch SLICE[0]{
+	// case  v[0] :fmt.Println("it's not earthquake")
+	// 	 default :fmt.Println("warning earthquake")
+	// }
+
+	if Time[0]==v[0]{
+		  fmt.Println("\n")
+		  fmt.Println(v[0])
+		fmt.Println("it's not earthquake")
+		
+	}else{
+		if 1==Send(Time,localtion,earthquake){
+			fmt.Println("send success")
+		}
+	}
+
+	
+	
+	// time.Sleep(time.Duration(100) * time.Second)
+	// if SendFunc.Reptile() != slice[0]{
+	// 	fmt.Println("earthquakes are occurring on the earth")
+	// }else{
+	// 	fmt.Println("not earthquake ")
+	// }
+
 }
