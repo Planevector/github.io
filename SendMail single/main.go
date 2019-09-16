@@ -1,16 +1,66 @@
-package Sendemail_func
+package main
 
 import (
 	"fmt"
+	"time"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"regexp"
 	"gopkg.in/gomail.v2"
 )
+type Member struct {
+	sister     string
+	mother     string
+	father     string
+	me         string
+	girlfriend string
+}
+
+func main(){
+	for {
+		Data()
+	}
+}
+
+func Data(){
+
+	V := Member{
+		sister:     "today is sister birthday",
+		mother:     "today is mother birthday",
+		father:     "today is father birthday",
+		me:         "today is my birthday",
+		girlfriend: "today is girlfriend birthday",
+	}
+	date := [5]string{"八月廿三", "十一月十五", "五月十六", "十月十五", "六月初五"}
+
+	for {
+		var slice []string = Reptile()
+		switch slice[7] {
+		case date[0]:
+			SendEmail(V.sister)
+			fmt.Println("send succes")
+		case date[1]:
+		SendEmail(V.mother)
+			fmt.Println("send succes")
+		case date[2]:
+			SendEmail(V.father)
+			fmt.Println("send succes")
+		case date[3]:
+			SendEmail(V.me)
+			fmt.Println("send succes")
+		case date[4]:
+			SendEmail(V.girlfriend)
+			fmt.Println("send succes")
+		default:
+			fmt.Println("今天没有谁过生日哟")
+			fmt.Println("today is",slice[7])
+		}
+		time.Sleep(time.Duration(7200) * time.Second)
+	}
 
 
-//发送邮件
+}
 func SendEmail(Member string) {
 
 	m := gomail.NewMessage()
