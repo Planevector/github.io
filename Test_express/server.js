@@ -170,4 +170,4 @@ app.use('/users',usersRouter);
 
 
 app.listen(3000);
-console.log('listen to port');
+console.log('listen to port 3000')
