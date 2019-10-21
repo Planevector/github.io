@@ -8,11 +8,11 @@ import (
 func Print() {
 	var earthquake,localtion []string= SendFunc.Reptile()
 	var Time []string=SendFunc.Reptile1()
-	fmt.Println("last earthquake\n")
+	fmt.Println("\nlast earthquake\n")
 	fmt.Println(Time[0])
 	fmt.Println(localtion[0])
 	fmt.Println(earthquake[0])
-	time.Sleep(time.Duration(50) * time.Second)
+	time.Sleep(time.Duration(10) * time.Second)
 	// fmt.Println(slice)
 	// fmt.Println("\n\n\n")
 	// fmt.Println(Slice)
@@ -24,18 +24,19 @@ func Print() {
 	// 	 default :fmt.Println("warning earthquake")
 	// }
 
-	if Time[0]==v[0]{
+	if Time[0]=ls=v[0]{
 		  fmt.Println("\n")
 		  fmt.Println(v[0])
-		fmt.Println("it's not earthquake")
+		fmt.Println("\nit's not earthquake\n")
+	
+	}else if 1==SendFunc.Send(Time,localtion,earthquake) {
+		fmt.Println("\nEarthquake !!!\n\a\a\a")
 		
-	}else{
-		if 1==SendFunc.Send(Time,localtion,earthquake){
-			fmt.Println("send success")
+		fmt.Println(v[0])
 		}
 	}
 
-	
+
 	
 	// time.Sleep(time.Duration(100) * time.Second)
 	// if SendFunc.Reptile() != slice[0]{
@@ -44,4 +45,4 @@ func Print() {
 	// 	fmt.Println("not earthquake ")
 	// }
 
-}
+
