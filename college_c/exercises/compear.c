@@ -8,3 +8,7 @@ int main(){
     printf("%d",b);
     return 0;
 }
+
+// void compear(int x,int y){
+//     printf("%d",(x,y?x:y));
+// }

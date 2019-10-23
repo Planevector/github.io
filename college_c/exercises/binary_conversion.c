@@ -2,7 +2,7 @@
 
 int main(){
     int a;
-    scanf("%d",&a);
-    printf("octal number system:%o\thexadecimal:0X%x",a,a);
+    scanf("%x",&a);
+    printf("octal number system:%o\nDecimal system:%d",a,a);
     return 0;
 }
