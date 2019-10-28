@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	rePhone = "1[357]\\d{9}"
+	rePhone = "[\\s\\S]"
 )
 
 func HandleErr(err error, when string) {
@@ -29,7 +29,7 @@ func GetHtml(url string) string {
 }
 
 func main() {
-	html := GetHtml("http://www.tiaohao.com/news/newshow.asp?idnews=973")
+	html := GetHtml("http://www.uv200.com/")
 	//fmt.Println(html)
 
 	re := regexp.MustCompile(rePhone)

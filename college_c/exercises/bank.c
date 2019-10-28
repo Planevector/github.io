@@ -1,10 +1,9 @@
 #include "stdio.h"
 #define One 0.025
 #define Two 0.028
-double Sqrt(double x);
 
 int main(){
-    
+
     char type;
     int Deposit,take;
     float Amount_of_money,s=1;
