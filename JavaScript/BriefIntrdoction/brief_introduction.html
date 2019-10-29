@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+    <title>this brief introduction
+    </title>
+</head>
+
+<body>
+<!---JavaScript：直接写入 HTML 输出流-->
+<script>
+    document.write("<h1>this title</h1>");
+    document.write("<p>paragraph</p>");
+    </script>
+
+    <!--JavaScript：对事件的反应-->
+    <button type="button" onclick="alert('hello')">onclick me</button>
+    
+    <!--JavaScript：改变 HTML 内容-->
+    <p id="1">change content</p>
+    <script>
+        function change(){
+            x=document.getElementById("1");
+            x.innerHTML="changed";
+        }
+    </script>
+    <button type="button" onclick="change()">onclick here</button>
+
+    <!--JavaScript：改变 HTML 图像-->
+    <script>
+    function img(){
+        element=document.getElementById('2')
+        if(element.src.match("3")){
+            element.src="1.gif";
+        }else{
+            element.src="3.gif"
+        }
+    }
+    </script>
+    <img id="2" onclick="img()" src="1.gif" />
+
+
+</body>
+</html>

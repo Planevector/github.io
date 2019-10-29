@@ -28,16 +28,24 @@ void b(){
 
 
 int main(){
-    int *p=NULL;
-    int a=250;
-    p=&a;
-    printf("%p,%5d%5d",p,*p,a);
+    // int *p=NULL;
+    // int a=250;
+    // p=&a;
+    // printf("%p,%5d%5d",p,*p,a);
 
-    *p=234;
-    printf("\n%d,%d",*p,a);
-    return 0;
+    // *p=234;
+    // printf("\n%d,%d",*p,a);
+    // return 0;
 //a();
 //b();
+
+int i;
+i=0;end:
+if(i<10){
+    printf("123\t");
+    i++;
+    goto end;
+}
 
 }
 
