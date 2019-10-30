@@ -29,7 +29,7 @@ func GetHtml(url string) string {
 }
 
 func main() {
-	html := GetHtml("https://www.hao123.com")
+	html := GetHtml("https://theporndude.com/zh")
 
 	//fmt.Println(html)
 
