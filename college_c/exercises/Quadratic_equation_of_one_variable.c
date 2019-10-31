@@ -20,14 +20,18 @@ int main(){
 
     float a,b,c;
     scanf("%f%f%f",&a,&b,&c);
-
-    if(b*b-4*a*c<0){
+     float dlt=b*b-4*a*c;
+    if(dlt<0){
         printf("invalid equation");
     }
     else{ 
-        float dlt=b*b-4*a*c;
+        if(dlt==0)
+        printf("x=%f",-b/2/a);
+        else{
+
         printf("x1=%f\t",(-b+Sqrt(dlt)/a/2));
         printf("x2=%f",(-b-Sqrt(dlt)/a/2));
+        }
     }
 
     return 0;
