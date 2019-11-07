@@ -24,7 +24,7 @@ func Print() {
 	// 	 default :fmt.Println("warning earthquake")
 	// }
 
-	if Time[0]!=v[0]{
+	if Time[0]==v[0]{
 		 fmt.Println("\n")
 		  fmt.Println(v[0])
 		fmt.Println("\nit's not earthquake\n")

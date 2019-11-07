@@ -1,3 +1,9 @@
 {
-    "workbench.colorTheme": "Visual Studio Dark"
+    "workbench.colorTheme": "Visual Studio Dark",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }

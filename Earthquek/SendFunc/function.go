@@ -14,12 +14,12 @@ import (
 func Send(Member []string,Member2 []string,Member3 []string) int {
 
 	m := gomail.NewMessage()
-	m.SetHeader("From", "bandicam2017@aliyun.com")              //发件人
-	m.SetHeader("To", "1171840237@qq.com")                    //收件人
-	m.SetAddressHeader("Cc", " ", "message") //抄送人
+	m.SetHeader("From", "planevector@tom.com")              //发件人
+	m.SetHeader("To", "1957570662@qq.com")                    //收件人
+	m.SetAddressHeader("Cc", "2774905633@qq.com", "message") //抄送人
 	m.SetHeader("Subject", "earthquake warning")                         //邮件标题
 	m.SetBody("text/html", Member[0]+Member2[0]+Member3[0]+"级地震")                             //邮件内容
-	d := gomail.NewDialer("smtp.aliyun.com", 465, "bandicam2017@aliyun.com", "Wang1015")
+	d := gomail.NewDialer("smtp.aliyun.com", 465, "planevector@tom.com", "Wang1015")
 	//邮件发送 服务器 信息,使用授权码而非密码
 	if err := d.DialAndSend(m); err != nil {
 		panic(err)
