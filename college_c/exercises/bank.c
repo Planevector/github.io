@@ -1,6 +1,7 @@
 #include "stdio.h"
 #define One 0.025
 #define Two 0.028
+#define three 0.012
 
 int main(){
 
@@ -22,16 +23,20 @@ int main(){
     s*=(1+Two);
     printf("%f",Amount_of_money*s);
     break;
+
+case '3':
+for(int i=0;i<take-Deposit;i++){
+     s*=(1+three);}
+     printf("%f",Amount_of_money*s);
+     break;
  default:
  puts("type error");
      break;
  }
-
-
-
-
     return 0;
 }
+
+
 
 double Sqrt(double x){
     double r,l,m,i;
