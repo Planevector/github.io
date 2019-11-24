@@ -34,5 +34,7 @@ int main(void){
         }
         printf("px[%d]=%d,sum=%ld,\n",i,px[i],sum);
     }
+    free(px);
+    px=NULL;
     printf("\n%d\n",indexmax);       
 }

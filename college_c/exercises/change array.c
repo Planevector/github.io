@@ -30,4 +30,7 @@ printf("changed:\n");
 for(int i=0;i<n;i++)
 printf("%d\t",px[i]);
 
+free(px);
+px=NULL;
+
 }
