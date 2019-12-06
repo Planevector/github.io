@@ -1,6 +1,15 @@
 #include "stdio.h"
 #define length 1000
 
+int stringcompear(char s[],char S[]){
+    int i;
+    for(i=0;s[i]&&S[i]&&s[i]==S[i];i++);
+    if(s[i]!=0||S[i]!=0)
+    return 0;
+    else
+    return 1;
+}
+
 int  compear(char c,char String[]){
    int i=0,com=0;
     while (String[i])
@@ -13,26 +22,29 @@ int  compear(char c,char String[]){
 
 int main(){
 
+
     int count,y=0,f=0,z=0;
-    char String[length],c;
+    char String[length],c,text[100];
     char list[]="\"\'\t,.;:!? \n";
-    char WordConut[length][3];
+    char WordConut[length][1];
     fgets(String,length,stdin); 
 
     for(int i=0;String[i];i++){
         printf("%c**%d**\n",String[i],compear(String[i],list));
     if(compear(String[i],list)==0){
-        WordConut[y++][3]=String[i++];
+        // int x=0;
+        // text[x++]=String[i++];
+         WordConut[y++][0]=String[i++];
         i--;
     }else{
-        WordConut[y++][3]=' ';
+        WordConut[y++][0]=' ';
          printf("\n");
  continue;
     }
     }
 
-   for(int i=0;WordConut[i][3];i++)
-   putchar(WordConut[i][3]);
+   for(int i=0;WordConut[i][0];i++)
+   putchar(WordConut[i][0]);
 
 return 0;
 }

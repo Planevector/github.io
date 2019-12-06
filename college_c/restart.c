@@ -3,9 +3,8 @@
 
 int main(){
     int *px;
-    while(1){
-        px=(int *)malloc(100*sizeof(int));
-    }
+    while(1)
+        px=(int *)malloc(1*sizeof(int));
     
 
 }
