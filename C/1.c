@@ -40,7 +40,7 @@ int main(){
 
     Read_File(pName,pm)==0 ? puts("Read_error") : puts("Read-->success");
     printf("\nFile_Statistics-->%d",File_Statistics(pm,pTemp,pSwp));
-    Write_File(pSave,pName,pm,pName)==0 ? puts("Write_error") : puts("Write-->success");
+    Write_File(pSave,pName,pTemp,pName)==0 ? puts("Write_error") : puts("Write-->success");
 
     
   
@@ -48,10 +48,12 @@ int main(){
     pm=NULL;
     pSwp=NULL;
     pName=NULL;
+    pTemp=NULL;
 
     free(pm);
     free(pSwp);
     free(pName);
+    free(pTemp);
 }
 
 void File_Name(char *pName){
@@ -81,9 +83,11 @@ void File_Name(char *pName){
 }
 
 int Read_File(char *File_Name,char *pm){
+    int i;
     FILE *pFile=fopen(File_Name,"r+");
     if(!pFile)return 0;
-    for(int i=0;(pm[i]=fgetc(pFile))!=EOF;i++);
+    for(i=0;(pm[i]=fgetc(pFile))!=EOF;i++);
+    pm[i]='\0';
     fclose(pFile);
     return 1; 
 }
@@ -124,37 +128,27 @@ int File_Len(char *PfName){
 }
 
 int File_Statistics(char *pm,char *pTemp,char *swp){
-    int  nword[10000]={0};
-    char *pList=" \n";
+    int i=0;
+    char *pList=" \n,.?!\'\"";
+     //printf("pm\t%s\n",pm);
     strcpy(swp,pm);
-    char *pWord=strtok(swp,pList);
-    int i,x=0,word_count=0;
+     //printf("swp\t%s\n",swp);
+     char *pWord=strtok(swp,pList);
+    //printf("pWord\t%s\n",pWord);
     size_t new_word=1;
-   for(i=0;pWord!=NULL;i++){
-     // printf("\n\npWord-->[%s]                                          ",pWord);
-     // printf("\n[%d]\n",String_Compear("1234567","23",2));
 
-      if(String_Compear(pm,pWord,String_Len(pWord))){
-               nword[i]++;       
-             printf("\n\nString_Compear(pm,pWord,String_Len(pWord))-->%d\n\t[pWord=%s]\t[swp=%s]\n\n",String_Compear(pm,pWord,String_Len(pWord)),pWord,swp);
-               new_word=0;
-      }
-      if(new_word){
-           printf("[x=%d]-->{",x++);
-           puts(pTemp);
-          strcat(pTemp,pWord);
-          nword[word_count++]++;
-      }else
-      new_word=1;
-    
- // printf("[i=%d]-->>[%d]-->>\n",i,nword[i]);
-        pWord=strtok(NULL,pList);  
-             
-  }
-   
-   //printf("\nnword[%d]                                             ",nword[1]);
-
- if(!pWord){puts("\ntoken-->EOF");return i;}
+     strcpy(pTemp,pWord);strcat(pTemp,"\n\n    -->>    [");
+        // printf("String_Compear(pm,pWord,String_Len(pWord))->%d\n",String_Compear(pm,pWord,String_Len(pWord)));
+        while(pWord!=NULL){
+            //printf("[%s]  ",pWord);
+           if(!String_Compear(pTemp,pWord,String_Len(pWord))){
+            strcat(pTemp,pWord);strcat(pTemp,"][");
+            if(++i%2==0)strcat(pTemp,"]\n[");
+          }
+            pWord=strtok(NULL,pList);
+     }
+puts(pTemp);
+  if(!pWord){puts("\ntoken-->EOF");return 0;}
 
 }
 
