@@ -1,7 +1,6 @@
 #include "stdio.h"
 
 int main(){
-
   int sum,sum1;
   for(int x=2;x<=1000;x++){
       sum=sum1=0;
@@ -12,7 +11,6 @@ int main(){
       if(sum%y==0)sum1+=y;
       
       if(x==sum1)printf("%d->%d\n",x,sum);
-
   } 
     
 }

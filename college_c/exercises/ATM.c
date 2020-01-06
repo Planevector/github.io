@@ -8,10 +8,8 @@ int main(){
         if(i%2==0)z=x+y;
         else
         z=x-y;
-
         x=y;
         y=z;
-
        printf("%d ",z);
     }
 }

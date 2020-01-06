@@ -3,7 +3,7 @@
 int A(int a,int b){
     int z;
     if(a<b){z=a;a=b;b=z;}
-    while(b!=0){
+    while(b>0){
        z=a%b;
        a=b;b=z;
     }

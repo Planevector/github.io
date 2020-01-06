@@ -29,7 +29,7 @@ func GetHtml(url string) string {
 }
 
 func main() {
-	html := GetHtml("http://www.uv200.com/")
+	html := GetHtml("https://wenku.baidu.com/view/b1d38878e97101f69e3143323968011ca200f744.html")
 	//fmt.Println(html)
 
 	re := regexp.MustCompile(rePhone)

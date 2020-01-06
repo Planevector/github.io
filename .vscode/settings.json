@@ -5,5 +5,10 @@
         "**/.project": true,
         "**/.settings": true,
         "**/.factorypath": true
+    },
+    "files.associations": {
+        "conio.h": "c",
+        "random": "c",
+        "stdio.h": "c"
     }
 }

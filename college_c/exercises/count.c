@@ -1,8 +1,7 @@
 #include "stdio.h"
-#include "stdlib.h"
 int main(){
     char c;
-    int *px=(int *)malloc(4*sizeof(int));
+    int px[4]={0};
     while ((c=getchar())!='#')
     {
        if(c==' ')px[0]++;
@@ -14,6 +13,4 @@ int main(){
        px[3]++;
     }
     printf("space:%d\tword:%d\tnumber:%d\tother:%d\t",px[0],px[1],px[2],px[3]);
-    free(px);
-   
 }
