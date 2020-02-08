@@ -10,7 +10,7 @@
 //     int num;
 // };
 
- int n=b50000;
+ int n=20000;
 int CreateArray(int *px,int n){
     srand((unsigned)time(NULL));
     printf("origin array:");

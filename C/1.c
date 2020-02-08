@@ -147,7 +147,7 @@ int File_Statistics(char *pm,char *pTemp,char *swp){
           }
             pWord=strtok(NULL,pList);
      }
-puts(pTemp);
+    puts(pTemp);
   if(!pWord){puts("\ntoken-->EOF");return 0;}
 
 }
